@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class NitishaTextmessage {
+    public static void main(String[] args) {
+        String txt;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the text message:");
+        txt = sc.next();
+        if(txt.length()>=6 && txt.length()<=10 )
+        {
+            System.out.println("Text length is:" +txt.length());
+        }
+
+        else {
+            System.out.println("Text length is not between 6 and 10");
+        }
+    }
+}
