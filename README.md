@@ -1,2 +1,2 @@
 # 100-DAY-CODE-CHALLENGE
-I will be solving coding questions on GFG and will upload my codes here.
+I will be solving coding questions and will upload my codes here.
