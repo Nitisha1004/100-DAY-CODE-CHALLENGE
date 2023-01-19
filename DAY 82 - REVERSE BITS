@@ -1,0 +1,17 @@
+public class Solution {
+    // you need treat n as an unsigned value
+    public int reverseBits(int n) {
+        Integer j=31;
+        Integer i=0;
+        Integer val = n;
+        while(i<j){
+            if(((val>>i)&1)!=((val>>j)&1)){
+                val^=((1<<i)|(1<<j));
+            }
+            ++i;
+            --j;
+        }
+        return val;
+        
+    }
+}
