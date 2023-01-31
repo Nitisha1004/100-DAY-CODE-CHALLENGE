@@ -1,0 +1,26 @@
+class Solution {
+    public int findShortestSubArray(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer[]> rangeMap = new HashMap<>();
+        int degree = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            map.put(num, map.getOrDefault(num, 0) + 1);
+            degree = Math.max(degree, map.get(num));
+
+            if (rangeMap.get(num) == null) rangeMap.put(num, new Integer[2]);
+            Integer[] range = rangeMap.get(num);
+            if (range[0] == null) range[0] = i;
+            range[1] = i;
+        }
+        int res = nums.length;
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == degree) {
+                Integer[] range = rangeMap.get(entry.getKey());
+                res = Math.min(res, range[1] - range[0] + 1);
+            }
+        }
+        return res;
+        
+    }
+}
